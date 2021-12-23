@@ -372,12 +372,16 @@ textarea {
   justify-content: center;
   align-items: center;
 }
-.user-data-item input:hover {
-  border-color: var(--hover-color);
+
+.user-data-item:hover.user-data-item svg {
   fill: var(--hover-color);
 }
-.user-data-item input:hover svg {
+.user-data-item:focus.user-data-item svg {
   fill: var(--hover-color);
+}
+.user-data-item input:focus,
+.user-data-item input:hover {
+  border-color: var(--hover-color);
 }
 .user-data-item textarea:hover {
   border-color: var(--hover-color);
