@@ -77,6 +77,46 @@
                 <use href="./images/icons.svg#icon-close"></use>
               </svg>
             </button>
+            <h2 class="modal-window-title">Оставьте свои данные, мы вам перезвоним</h2>
+            
+            <ul class="user-data">
+              <li class="user-data-item">
+                <label>Имя
+                  <svg width="12px" height="12px" class="user-data-icon">
+                    <use href="images/icons.svg#icon-user-name" ></use>
+                  </svg>
+                  <input type="text" name="user-name" id="user-name" class="user-name" required>
+                </label>
+              </li>
+                <li class="user-data-item">
+                  <label>Телефон
+                    <svg width="13px" height="13px" class="user-data-icon">
+                      <use href="images/icons.svg#icon-phone" ></use>
+                    </svg>
+                  <input name="phone-number" id="phone-number" type="tel" required>
+                  </label>
+                </li>
+                <li class="user-data-item">
+                  <label>Почта
+                    <svg width="15px" height="12px" class="user-data-icon">
+                      <use href="images/icons.svg#icon-email" ></use>
+                    </svg>
+                    <input name="user-email" id="user-email" type="email" required>
+                  </label>
+                </li>
+                <li class="user-data-item">
+                  <label>Комментарий
+                  <textarea name="comment" id="comment"  rows="6" placeholder="Введите текст"></textarea>
+                  </label>
+                </li>
+            </ul>
+                <div class="agree-send">
+                  <form name="checkbox">
+                   <input id="checkbox" type="checkbox" class="checkbox" required>
+                   <label for="checkbox" class="checkbox">Соглашаюсь с рассылкой и принимаю <span class="agreement-terms"> <a href="">Условия договора</a></span></label>
+                  </form>
+                  <button class="modal-window-data-send" type="submit">Отправить</button>
+                </div>
           </div>
         </div>
       </div>
