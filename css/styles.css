@@ -289,7 +289,7 @@ a:active {
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--text-color);
 }
@@ -304,6 +304,7 @@ a:active {
 .user-data-item input {
   padding-left: 42px;
   padding-right: 15px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .user-data-item input,
 textarea {
@@ -331,17 +332,27 @@ textarea {
   padding-bottom: 12px;
   padding-left: 16px;
   padding-right: 16px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .checkbox {
   font-family: inherit;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--text-color);
   margin-bottom: 30px;
 }
+.checkbox-sign {
+  margin-right: 7px;
+  opacity: 1;
+}
+
+.agree-send-form {
+  margin-bottom: 30px;
+}
+
 .agreement-terms a {
   color: var(--hover-color);
 }
@@ -366,6 +377,7 @@ textarea {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
+
 .agree-send {
   display: flex;
   flex-direction: column;
@@ -375,17 +387,61 @@ textarea {
 
 .user-data-item:hover.user-data-item svg {
   fill: var(--hover-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.user-data-item:focus.user-data-item svg {
+.user-data-item:focus.user-data-item svg,
+.user-data-item:active.user-data-item svg {
   fill: var(--hover-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .user-data-item input:focus,
-.user-data-item input:hover {
+.user-data-item input:hover,
+.user-data-item input:active {
   border-color: var(--hover-color);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
-.user-data-item textarea:hover {
+.user-data-item textarea:hover,
+.user-data-item textarea:focus {
   border-color: var(--hover-color);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
+.agreement-terms {
+  color: var(--hover-color);
+}
+.checkbox-positioning {
+  position: relative;
+}
+.checkbox-positioning svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: var(--hover-color);
+  fill: var(--body-background);
+  border-radius: 2px;
+}
+.checkbox-sign {
+  visibility: hidden;
+}
+.checkbox::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 1px solid var(--text-color);
+  border-radius: 2px;
+  background-color: var(--body-background);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.checkbox-positioning input:checked + .checkbox::after {
+  visibility: hidden;
+}
+
 .close {
   position: absolute;
   top: 8px;
@@ -743,10 +799,12 @@ footer li {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   color: rgba(255, 255, 255, 0.6);
+  outline: none;
 }
 .email-input:not(:placeholder-shown):invalid {
   border-color: red;
 }
+
 .submit {
   font-family: Roboto;
   font-style: normal;

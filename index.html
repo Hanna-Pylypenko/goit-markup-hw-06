@@ -111,9 +111,15 @@
                 </li>
             </ul>
                 <div class="agree-send">
-                  <form name="checkbox">
-                   <input id="checkbox" type="checkbox" class="checkbox" required>
-                   <label for="checkbox" class="checkbox">Соглашаюсь с рассылкой и принимаю <span class="agreement-terms"> <a href="">Условия договора</a></span></label>
+                  <form name="checkbox" class="agree-send-form">
+                    <span class="checkbox-positioning">
+                      <svg width="16px" height="15px">
+                      <use href="images/icons.svg#icon-check" ></use> </svg>
+                     <input id="checkbox" type="checkbox" class="checkbox-sign" required>
+                     <label for="checkbox" name="checkbox" class="checkbox">Соглашаюсь с рассылкой и принимаю 
+                       <a class="agreement-terms" href="">Условия договора</a>
+                     </label>
+                    </span>
                   </form>
                   <button class="modal-window-data-send" type="submit">Отправить</button>
                 </div>
